@@ -52,9 +52,9 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.7), transparent 30%),
-    linear-gradient(120deg, transparent 0 43%, rgba(214, 26, 114, 0.035) 50%, transparent 57%),
-    linear-gradient(300deg, transparent 0 46%, rgba(0, 169, 194, 0.03) 50%, transparent 54%);
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.45), transparent 24%),
+    linear-gradient(120deg, transparent 0 45%, rgba(214, 26, 114, 0.014) 50%, transparent 55%),
+    linear-gradient(300deg, transparent 0 47%, rgba(0, 169, 194, 0.012) 50%, transparent 53%);
 }
 
 img {
@@ -139,14 +139,14 @@ section {
 .hero::after {
   content: "";
   position: absolute;
-  left: 6px;
-  top: 44px;
-  width: 180px;
-  height: 180px;
-  opacity: 0.18;
+  left: 12px;
+  top: 52px;
+  width: 170px;
+  height: 170px;
+  opacity: 0.08;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cpath d='M35 205c40-34 56-72 60-124 19 13 29 33 30 54 13-20 34-34 66-42-17 29-40 49-67 58 16 8 32 10 51 6-24 19-55 23-83 18-15 12-33 22-57 30Z' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M97 78c-9 49-27 84-62 127' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("./assets/ornament-accent.png");
 }
 
 .hero-text {
@@ -270,13 +270,13 @@ section {
 }
 
 .hero-visual::after {
-  inset: 42px 56px 42px auto;
-  width: min(54%, 280px);
+  inset: 54px 48px 54px auto;
+  width: min(46%, 220px);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  opacity: 0.26;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 400'%3E%3Cpath d='M26 375c28-23 49-57 57-104 11-62 1-117 26-165 18-34 44-54 85-66-19 19-30 38-34 59 16-12 32-17 49-17-30 23-48 51-58 83 14-6 28-7 45-4-29 14-49 35-61 63 11-1 23 3 34 10-20 4-35 15-43 34-9 24-4 52 17 82' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M84 101c18 23 27 47 30 72M62 219c21 11 38 27 50 48M115 309c17 11 32 27 42 48' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M87 156c18 6 33 16 45 32M90 273c18 2 33 9 47 22' fill='none' stroke='%2300a9c2' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  opacity: 0.1;
+  background-image: url("./assets/ornament-accent.png");
 }
 
 .hero-panel {
@@ -556,12 +556,12 @@ section {
   position: absolute;
   right: 18px;
   top: 18px;
-  width: 120px;
-  height: 120px;
-  opacity: 0.14;
+  width: 110px;
+  height: 110px;
+  opacity: 0.06;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M40 176c30-20 48-54 52-96 12 11 19 28 19 45 12-16 28-28 48-36-13 23-31 39-52 47 14 6 26 7 40 4-20 15-43 19-66 16-12 9-25 15-41 20Z' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M90 90c-8 36-23 65-50 86' fill='none' stroke='%2300a9c2' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("./assets/ornament-accent.png");
 }
 
 .timeline-item {
@@ -601,14 +601,14 @@ section {
 .join-box::before {
   content: "";
   position: absolute;
-  left: -18px;
-  top: -18px;
-  width: 150px;
-  height: 150px;
-  opacity: 0.15;
+  left: -10px;
+  top: -8px;
+  width: 132px;
+  height: 132px;
+  opacity: 0.07;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cpath d='M30 150c21-17 37-43 42-76 8-44 1-83 19-116 12 16 18 34 18 52 11-17 27-29 50-37-16 22-26 46-29 71 11-7 24-10 38-8-21 13-35 31-42 55 13-1 24 2 35 9-19 4-32 14-39 30' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M70 66c15 14 24 31 27 50M68 111c17 4 30 13 42 28' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("./assets/ornament-accent.png");
 }
 
 .join-box::after {
@@ -679,11 +679,12 @@ footer {
   }
 
   .hero::after {
-    width: 120px;
-    height: 120px;
+    width: 104px;
+    height: 104px;
     left: auto;
     right: 12px;
     top: 28px;
+    opacity: 0.06;
   }
 
   .hero-text h1 {
@@ -695,8 +696,9 @@ footer {
   }
 
   .hero-visual::after {
-    inset: 34px 24px 34px auto;
-    width: min(58%, 180px);
+    inset: 42px 20px 42px auto;
+    width: min(46%, 140px);
+    opacity: 0.08;
   }
 
   .menu-cards,
@@ -715,8 +717,9 @@ footer {
   }
 
   .timeline::after {
-    width: 86px;
-    height: 86px;
+    width: 74px;
+    height: 74px;
+    opacity: 0.05;
   }
 
   .timeline-item {
