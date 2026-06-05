@@ -1,17 +1,18 @@
 :root {
-  --bg: #111114;
-  --bg-soft: #18181d;
-  --panel: #f2ede3;
-  --panel-strong: #e3d6bf;
-  --text: #f5f1e8;
-  --text-soft: #b7aea0;
-  --ink: #121212;
-  --line: rgba(242, 237, 227, 0.18);
-  --line-strong: rgba(242, 237, 227, 0.34);
-  --accent: #d83a32;
-  --accent-soft: #a12622;
-  --gold: #d4b06a;
-  --shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+  --bg: #fbfaf7;
+  --bg-alt: #f2eee8;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-strong: #ffffff;
+  --text: #181311;
+  --text-soft: #60564d;
+  --line: rgba(118, 38, 28, 0.14);
+  --line-strong: rgba(118, 38, 28, 0.28);
+  --accent: #c9352c;
+  --accent-deep: #971f1a;
+  --gold: #b88a3b;
+  --fuchsia: #d61a72;
+  --cyan: #00a9c2;
+  --shadow: 0 18px 42px rgba(99, 42, 25, 0.08);
 }
 
 * {
@@ -24,12 +25,13 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", "Yu Gothic", "Hiragino Sans", sans-serif;
+  font-family: "Avenir Next", "Segoe UI", "Yu Gothic", "Hiragino Sans", sans-serif;
   color: var(--text);
   background:
-    linear-gradient(135deg, rgba(216, 58, 50, 0.08), transparent 28%),
-    linear-gradient(180deg, #0d0d10 0%, #131318 32%, #101014 100%);
-  letter-spacing: 0.02em;
+    radial-gradient(circle at top left, rgba(214, 26, 114, 0.06), transparent 24%),
+    radial-gradient(circle at 100% 22%, rgba(0, 169, 194, 0.08), transparent 18%),
+    linear-gradient(180deg, #fffcf7 0%, #f7f1ea 100%);
+  letter-spacing: 0.01em;
 }
 
 body::before {
@@ -38,10 +40,21 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.56), transparent 92%);
+    linear-gradient(rgba(118, 38, 28, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(118, 38, 28, 0.025) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.24), transparent 90%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.7), transparent 30%),
+    linear-gradient(120deg, transparent 0 43%, rgba(214, 26, 114, 0.035) 50%, transparent 57%),
+    linear-gradient(300deg, transparent 0 46%, rgba(0, 169, 194, 0.03) 50%, transparent 54%);
 }
 
 img {
@@ -57,9 +70,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(10, 10, 12, 0.82);
+  background: rgba(251, 250, 247, 0.88);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid rgba(118, 38, 28, 0.1);
 }
 
 .header-inner {
@@ -73,9 +86,8 @@ header {
 }
 
 .logo {
-  font-family: "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-weight: 700;
-  font-size: 28px;
+  font-weight: 900;
+  font-size: 26px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -84,9 +96,9 @@ nav {
   display: flex;
   gap: 10px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
 }
 
 nav a {
@@ -97,9 +109,9 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--text);
-  border-color: var(--line);
-  background: rgba(255, 255, 255, 0.04);
+  color: var(--accent);
+  border-color: rgba(118, 38, 28, 0.18);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 main {
@@ -115,12 +127,26 @@ section {
 }
 
 .hero {
+  position: relative;
   padding-top: 78px;
   padding-bottom: 56px;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: 44px;
   align-items: start;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 44px;
+  width: 180px;
+  height: 180px;
+  opacity: 0.18;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Cpath d='M35 205c40-34 56-72 60-124 19 13 29 33 30 54 13-20 34-34 66-42-17 29-40 49-67 58 16 8 32 10 51 6-24 19-55 23-83 18-15 12-33 22-57 30Z' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M97 78c-9 49-27 84-62 127' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .hero-text {
@@ -158,15 +184,19 @@ section {
 .book-cover,
 .book-body h3,
 .member-card h3,
-.join-box h3 {
-  font-family: "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
+.join-box h3,
+.hero-panel strong,
+.timeline-item strong,
+.date {
+  font-family: inherit;
 }
 
 .hero-text h1 {
-  font-size: clamp(46px, 6vw, 92px);
-  line-height: 0.96;
+  font-size: clamp(46px, 6vw, 86px);
+  line-height: 0.94;
   margin: 18px 0 22px;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.03em;
+  font-weight: 900;
 }
 
 .hero-text p:not(.hero-kicker) {
@@ -174,7 +204,7 @@ section {
   margin: 0 0 30px;
   font-size: 17px;
   line-height: 1.95;
-  color: #ddd4c8;
+  color: var(--text-soft);
 }
 
 .hero-buttons {
@@ -191,7 +221,7 @@ section {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
@@ -200,13 +230,13 @@ section {
 
 .button.primary {
   background: var(--accent);
-  color: #fff8f2;
+  color: #fffdfa;
   border-color: var(--accent);
-  box-shadow: 8px 8px 0 rgba(161, 38, 34, 0.35);
+  box-shadow: 8px 8px 0 rgba(201, 53, 44, 0.18);
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.74);
   color: var(--text);
 }
 
@@ -220,8 +250,9 @@ section {
   min-height: 520px;
   border: 1px solid var(--line-strong);
   background:
-    linear-gradient(180deg, rgba(10, 10, 12, 0.24), rgba(10, 10, 12, 0.72)),
-    linear-gradient(140deg, rgba(212, 176, 106, 0.22), rgba(216, 58, 50, 0.28) 45%, rgba(17, 17, 20, 0.82));
+    radial-gradient(circle at 15% 18%, rgba(0, 169, 194, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 24%, rgba(214, 26, 114, 0.16), transparent 20%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(244, 237, 229, 0.98) 45%, rgba(237, 230, 220, 0.98));
   box-shadow: var(--shadow);
   position: relative;
   overflow: hidden;
@@ -235,16 +266,17 @@ section {
 
 .hero-visual::before {
   inset: 24px;
-  border: 1px solid rgba(242, 237, 227, 0.18);
+  border: 1px solid rgba(118, 38, 28, 0.12);
 }
 
 .hero-visual::after {
-  width: 62%;
-  aspect-ratio: 1;
-  right: -10%;
-  top: -8%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(242, 237, 227, 0.2) 0%, rgba(242, 237, 227, 0.02) 46%, transparent 70%);
+  inset: 42px 56px 42px auto;
+  width: min(54%, 280px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.26;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 400'%3E%3Cpath d='M26 375c28-23 49-57 57-104 11-62 1-117 26-165 18-34 44-54 85-66-19 19-30 38-34 59 16-12 32-17 49-17-30 23-48 51-58 83 14-6 28-7 45-4-29 14-49 35-61 63 11-1 23 3 34 10-20 4-35 15-43 34-9 24-4 52 17 82' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M84 101c18 23 27 47 30 72M62 219c21 11 38 27 50 48M115 309c17 11 32 27 42 48' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M87 156c18 6 33 16 45 32M90 273c18 2 33 9 47 22' fill='none' stroke='%2300a9c2' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .hero-panel {
@@ -253,17 +285,25 @@ section {
   bottom: -24px;
   width: min(320px, calc(100% - 24px));
   padding: 22px 24px 24px;
-  background: rgba(12, 12, 15, 0.96);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid var(--line-strong);
   box-shadow: var(--shadow);
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  inset: auto 16px 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--fuchsia), var(--cyan));
 }
 
 .hero-panel strong {
   display: block;
   margin-top: 12px;
   font-size: 24px;
-  font-family: "Times New Roman", "Yu Mincho", "Hiragino Mincho ProN", serif;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .hero-panel p {
@@ -274,6 +314,7 @@ section {
 }
 
 section {
+  position: relative;
   padding-top: 44px;
   padding-bottom: 44px;
 }
@@ -294,12 +335,14 @@ section {
   margin: 0;
   font-size: 44px;
   line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.03em;
 }
 
 .section-rule {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, var(--line-strong), transparent);
+  background: linear-gradient(90deg, rgba(118, 38, 28, 0.3), rgba(214, 26, 114, 0.1), transparent);
 }
 
 .menu-cards {
@@ -314,11 +357,12 @@ section {
 .timeline,
 .join-box {
   border: 1px solid var(--line-strong);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(251, 248, 243, 0.96));
   box-shadow: var(--shadow);
 }
 
 .menu-card {
+  position: relative;
   padding: 24px;
   min-height: 220px;
   display: flex;
@@ -327,17 +371,31 @@ section {
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
+.menu-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), rgba(214, 26, 114, 0.55), rgba(0, 169, 194, 0.55));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
 .menu-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(212, 176, 106, 0.55);
-  background: linear-gradient(180deg, rgba(216, 58, 50, 0.14), rgba(255, 255, 255, 0.03));
+  border-color: rgba(184, 138, 59, 0.45);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 239, 231, 0.98));
+}
+
+.menu-card:hover::after {
+  opacity: 1;
 }
 
 .menu-card .icon {
   color: var(--accent);
-  font-family: "Times New Roman", serif;
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 
 .menu-card h3,
@@ -345,12 +403,13 @@ section {
 .member-card h3,
 .timeline-item strong,
 .join-box h3 {
-  letter-spacing: 0.04em;
+  letter-spacing: -0.02em;
 }
 
 .menu-card h3 {
   margin: 0;
   font-size: 24px;
+  font-weight: 900;
 }
 
 .menu-card p,
@@ -391,14 +450,24 @@ section {
   gap: 10px;
   font-size: clamp(28px, 4vw, 44px);
   line-height: 0.95;
-  color: #fff7ef;
+  color: #ffffff;
+  font-weight: 900;
   background:
-    linear-gradient(180deg, rgba(12, 12, 15, 0.18), rgba(12, 12, 15, 0.88)),
-    linear-gradient(135deg, #221d1b, #82221f 52%, #c79f57 100%);
+    linear-gradient(140deg, rgba(10, 10, 12, 0.18), rgba(10, 10, 12, 0.44)),
+    linear-gradient(135deg, var(--accent-deep), var(--accent) 52%, var(--gold) 100%);
+}
+
+.book-cover::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), var(--fuchsia), var(--cyan));
 }
 
 .book-index {
   margin-bottom: auto;
+  color: rgba(255, 255, 255, 0.88);
 }
 
 .book-body,
@@ -412,6 +481,7 @@ section {
 .join-box h3 {
   margin: 0 0 10px;
   font-size: 28px;
+  font-weight: 900;
 }
 
 .tag {
@@ -419,8 +489,9 @@ section {
   margin-top: 14px;
   margin-right: 8px;
   padding: 7px 10px;
-  border: 1px solid rgba(242, 237, 227, 0.16);
-  color: #f0d8c1;
+  border: 1px solid rgba(184, 138, 59, 0.28);
+  color: var(--accent-deep);
+  background: rgba(184, 138, 59, 0.08);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -440,7 +511,7 @@ section {
   position: absolute;
   inset: 16px 16px auto;
   height: 1px;
-  background: linear-gradient(90deg, rgba(212, 176, 106, 0.65), transparent);
+  background: linear-gradient(90deg, rgba(184, 138, 59, 0.75), transparent);
 }
 
 .member-icon {
@@ -449,12 +520,13 @@ section {
   margin-bottom: 20px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(242, 237, 227, 0.24);
-  background: linear-gradient(135deg, rgba(216, 58, 50, 0.82), rgba(212, 176, 106, 0.38));
-  color: #fff9f1;
-  font-family: "Times New Roman", serif;
+  border: 1px solid rgba(118, 38, 28, 0.16);
+  background:
+    linear-gradient(135deg, rgba(201, 53, 44, 0.92), rgba(184, 138, 59, 0.62)),
+    linear-gradient(180deg, rgba(214, 26, 114, 0.16), rgba(0, 169, 194, 0.12));
+  color: #fffdf8;
   font-size: 34px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .sns {
@@ -467,6 +539,7 @@ section {
   padding: 9px 14px;
   border: 1px solid var(--line);
   color: var(--text);
+  background: rgba(255, 255, 255, 0.72);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -474,7 +547,21 @@ section {
 }
 
 .timeline {
+  position: relative;
   padding: 10px 24px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 120px;
+  height: 120px;
+  opacity: 0.14;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M40 176c30-20 48-54 52-96 12 11 19 28 19 45 12-16 28-28 48-36-13 23-31 39-52 47 14 6 26 7 40 4-20 15-43 19-66 16-12 9-25 15-41 20Z' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M90 90c-8 36-23 65-50 86' fill='none' stroke='%2300a9c2' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .timeline-item {
@@ -482,7 +569,7 @@ section {
   grid-template-columns: 180px 1fr;
   gap: 22px;
   padding: 22px 0;
-  border-bottom: 1px solid rgba(242, 237, 227, 0.12);
+  border-bottom: 1px solid rgba(118, 38, 28, 0.1);
 }
 
 .timeline-item:last-child {
@@ -492,21 +579,36 @@ section {
 .date {
   display: grid;
   gap: 10px;
-  color: #fff2df;
+  color: var(--accent-deep);
   font-size: 20px;
-  font-family: "Times New Roman", "Yu Mincho", serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .timeline-item strong {
   display: block;
   margin-bottom: 8px;
   font-size: 24px;
+  font-weight: 900;
 }
 
 .join-box {
   position: relative;
   padding: 36px 32px;
   overflow: hidden;
+}
+
+.join-box::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: -18px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.15;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cpath d='M30 150c21-17 37-43 42-76 8-44 1-83 19-116 12 16 18 34 18 52 11-17 27-29 50-37-16 22-26 46-29 71 11-7 24-10 38-8-21 13-35 31-42 55 13-1 24 2 35 9-19 4-32 14-39 30' fill='none' stroke='%23b88a3b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M70 66c15 14 24 31 27 50M68 111c17 4 30 13 42 28' fill='none' stroke='%23d61a72' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 .join-box::after {
@@ -516,7 +618,7 @@ section {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(216, 58, 50, 0.28), transparent 70%);
+  background: radial-gradient(circle, rgba(201, 53, 44, 0.12), rgba(214, 26, 114, 0.08), transparent 70%);
 }
 
 .join-box .button {
@@ -527,7 +629,7 @@ footer {
   margin-top: 42px;
   padding: 28px 24px 40px;
   text-align: center;
-  color: #908776;
+  color: #8f7960;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -576,12 +678,25 @@ footer {
     padding-bottom: 34px;
   }
 
+  .hero::after {
+    width: 120px;
+    height: 120px;
+    left: auto;
+    right: 12px;
+    top: 28px;
+  }
+
   .hero-text h1 {
     font-size: clamp(40px, 14vw, 62px);
   }
 
   .hero-visual {
     min-height: 360px;
+  }
+
+  .hero-visual::after {
+    inset: 34px 24px 34px auto;
+    width: min(58%, 180px);
   }
 
   .menu-cards,
@@ -597,6 +712,11 @@ footer {
   .timeline {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .timeline::after {
+    width: 86px;
+    height: 86px;
   }
 
   .timeline-item {
