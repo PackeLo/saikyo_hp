@@ -12,10 +12,10 @@ const navigationItems = [
 ];
 
 const menuCards = [
-  { href: '#members', icon: '🎨', title: 'Members', description: 'メンバーのX・Pixivリンクとプロフィール。' },
-  { href: '#activities', icon: '📅', title: 'Activities', description: '合同誌制作、イベント参加、Web企画など。' },
-  { href: '#works', icon: '📚', title: 'Works', description: 'これまで発行した合同本の紹介。' },
-  { href: '#join', icon: '🌟', title: 'Join Us', description: 'いっしょに本を作る仲間を募集中。' },
+  { href: '#members', icon: '01', title: 'Members', description: 'メンバーのX・Pixivリンクとプロフィール。' },
+  { href: '#activities', icon: '02', title: 'Activities', description: '合同誌制作、イベント参加、Web企画など。' },
+  { href: '#works', icon: '03', title: 'Works', description: 'これまで発行した合同本の紹介。' },
+  { href: '#join', icon: '04', title: 'Join Us', description: 'いっしょに本を作る仲間を募集中。' },
 ];
 
 const works = [
@@ -64,14 +64,18 @@ function Header() {
 
 function SectionTitle({ title, caption }) {
   return e('div', { className: 'section-title' },
-    e('h2', null, title),
-    e('span', null, caption),
+    e('span', { className: 'section-caption' }, caption),
+    e('div', { className: 'section-heading' },
+      e('h2', null, title),
+      e('span', { className: 'section-rule', 'aria-hidden': 'true' }),
+    ),
   );
 }
 
 function Hero() {
   return e('section', { className: 'hero', id: 'top' },
     e('div', { className: 'hero-text' },
+      e('p', { className: 'hero-kicker' }, 'Doujin Circle / Illustration / Manga / Novel'),
       e('h1', null, '創作を持ち寄る、', br(), '小さなアトリエ。'),
       e('p', null,
         'Starry Atelierは、イラスト・漫画・小説を中心に活動する合同同人サークル。',
@@ -82,7 +86,14 @@ function Hero() {
         e('a', { className: 'button secondary', href: '#join' }, 'メンバー募集'),
       ),
     ),
-    e('div', { className: 'hero-visual', role: 'img', 'aria-label': 'Starry Atelierのキービジュアル' }),
+    e('div', { className: 'hero-visual-wrap' },
+      e('div', { className: 'hero-visual', role: 'img', 'aria-label': 'Starry Atelierのキービジュアル' }),
+      e('div', { className: 'hero-panel' },
+        e('span', null, 'Featured'),
+        e('strong', null, '2026 Spring Zine'),
+        e('p', null, '静かな熱量を束ねる、硬質な装丁の合同本を制作中。'),
+      ),
+    ),
   );
 }
 
@@ -103,7 +114,10 @@ function Works() {
     e(SectionTitle, { title: 'Works', caption: '既刊の合同本' }),
     e('div', { className: 'works-grid' },
       works.map((work) => e('article', { className: 'book-card', key: work.title },
-        e('div', { className: 'book-cover' }, ...work.cover),
+        e('div', { className: 'book-cover' },
+          e('span', { className: 'book-index' }, work.tags[0]),
+          ...work.cover,
+        ),
         e('div', { className: 'book-body' },
           e('h3', null, work.title),
           e('p', null, work.description),
@@ -136,7 +150,10 @@ function Activities() {
     e(SectionTitle, { title: 'Activities', caption: '活動内容' }),
     e('div', { className: 'timeline' },
       activities.map((activity) => e('div', { className: 'timeline-item', key: activity.date },
-        e('div', { className: 'date' }, activity.date),
+        e('div', { className: 'date' },
+          e('span', null, 'Schedule'),
+          activity.date,
+        ),
         e('div', null,
           e('strong', null, activity.title),
           e('p', null, activity.description),
