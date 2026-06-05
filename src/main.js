@@ -13,36 +13,39 @@ const navigationItems = [
 
 const menuCards = [
   { href: '#members', icon: '01', title: 'Members', description: 'メンバーのX・Pixivリンクとプロフィール。' },
-  { href: '#activities', icon: '02', title: 'Activities', description: '合同誌制作、イベント参加、Web企画など。' },
+  { href: '#activities', icon: '02', title: 'Activities', description: '合同誌制作、イベント参加など。' },
   { href: '#works', icon: '03', title: 'Works', description: 'これまで発行した合同本の紹介。' },
   { href: '#join', icon: '04', title: 'Join Us', description: 'いっしょに本を作る仲間を募集中。' },
 ];
 
 const works = [
   {
-    cover: ['星降る', br(), 'スケッチブック'],
-    title: '星降るスケッチブック',
+    cover: ['白本'],
+    title: '白本',
     description: 'A5 / 40P / フルカラー合同イラスト本',
     tags: ['COMITIA', '創作'],
   },
   {
-    cover: ['Dream', br(), 'Garden'],
-    title: 'Dream Garden',
+    cover: ['赤本'],
+    title: '赤本',
     description: '花と夢をテーマにした合同作品集。',
     tags: ['イラスト', '小説'],
   },
   {
-    cover: ['Palette', br(), 'Party'],
-    title: 'Palette Party',
+    cover: ['黒本'],
+    title: '黒本',
     description: 'メンバーそれぞれの色を集めた一冊。',
     tags: ['合同誌', '通販あり'],
   },
 ];
 
 const members = [
-  { initial: 'A', name: 'Akari', description: '担当：イラスト。魔法少女と星空が好き。' },
-  { initial: 'M', name: 'Mizuki', description: '担当：漫画。日常とファンタジーを描くよ。' },
-  { initial: 'S', name: 'Sora', description: '担当：小説・編集。世界観設定が大好き。' },
+  { initial: 'サムネ', name: 'のこう', description: '[自己紹介]' },
+  { initial: 'サムネ', name: 'めあり', description: '[自己紹介]' },
+  { initial: 'サムネ', name: 'きりいろ', description: '[自己紹介]' },
+  { initial: 'サムネ', name: 'たつたあげ', description: '[自己紹介]' },
+  { initial: 'サムネ', name: '外道', description: '[自己紹介]' },
+  { initial: 'サムネ', name: 'package.lock.json', description: '[自己紹介]' },
 ];
 
 const activities = [
@@ -54,7 +57,7 @@ const activities = [
 function Header() {
   return e('header', null,
     e('div', { className: 'header-inner' },
-      e('a', { className: 'logo', href: '#top' }, 'Starry Atelier'),
+      e('a', { className: 'logo', href: '#top' }, '[サークル名]'),
       e('nav', { 'aria-label': 'メインナビゲーション' },
         navigationItems.map((item) => e('a', { key: item.href, href: item.href }, item.label)),
       ),
@@ -76,10 +79,13 @@ function Hero() {
   return e('section', { className: 'hero', id: 'top' },
     e('div', { className: 'hero-text' },
       e('p', { className: 'hero-kicker' }, 'Doujin Circle / Illustration / Manga / Novel'),
-      e('h1', null, '創作を持ち寄る、', br(), '小さなアトリエ。'),
+      e('h1', null, 'これが俺達の、', br(), '最強だ。'),
       e('p', null,
-        'Starry Atelierは、イラスト・漫画・小説を中心に活動する合同同人サークル。',
-        'それぞれの好きな世界を集めて、本や展示を作っているよ。',
+        '[サークル名]は、漫画・小説を中心に活動する合同同人サークル。',
+        '気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。',
+        '',
+        'また、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。',
+        'メンバー同士で切磋琢磨しながら、創作を行っています。',
       ),
       e('div', { className: 'hero-buttons' },
         e('a', { className: 'button primary', href: '#works' }, '既刊を見る'),
@@ -87,11 +93,11 @@ function Hero() {
       ),
     ),
     e('div', { className: 'hero-visual-wrap' },
-      e('div', { className: 'hero-visual', role: 'img', 'aria-label': 'Starry Atelierのキービジュアル' }),
+      e('div', { className: 'hero-visual', role: 'img', 'aria-label': '[サークル名]のキービジュアル' }),
       e('div', { className: 'hero-panel' },
         e('span', null, 'Featured'),
         e('strong', null, '2026 Spring Zine'),
-        e('p', null, '静かな熱量を束ねる、硬質な装丁の合同本を制作中。'),
+        e('p', null, '制作中'),
       ),
     ),
   );
@@ -169,8 +175,8 @@ function Join() {
     e('div', { className: 'join-box' },
       e('h3', null, 'いっしょに創作する仲間を募集中！'),
       e('p', null,
-        'イラスト、漫画、小説、デザイン、編集など、創作が好きな人を歓迎しているよ。',
-        '活動ペースはゆるめ。無理なく楽しく、合同本やWeb企画を作っていくサークルだよ。',
+        'イラスト、漫画、小説、デザイン、編集など、創作が好きな人を歓迎しています！',
+        '活動ペースはゆるめ。無理なく楽しく、合同本を作っていくサークルです。',
       ),
       e('a', { className: 'button primary', href: '#' }, '応募・お問い合わせ'),
     ),
