@@ -4,6 +4,13 @@ import { createRoot } from 'react-dom/client';
 const e = React.createElement;
 const br = () => e('br');
 
+function withLineBreaks(content) {
+  const parts = Array.isArray(content) ? content : String(content).split('\n');
+  return parts.flatMap((part, index) => (
+    index === 0 ? [part] : [br(), part]
+  ));
+}
+
 const navigationItems = [
   { href: '#members', label: 'Members' },
   { href: '#activities', label: 'Activities' },
@@ -125,13 +132,7 @@ function Hero() {
     e('div', { className: 'hero-text' },
       e('p', { className: 'hero-kicker' }, 'Doujin Circle / Illustration / Manga / Novel'),
       e('h1', null, 'これが俺の、', br(), '最強だ。'),
-      e('p', null,
-        '[サークル名]は、漫画・小説を中心に活動する合同同人サークル。',
-        '気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。',
-        '',
-        'また、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。',
-        'メンバー同士で切磋琢磨しながら、創作を行っています。',
-      ),
+      e('p', null, ...withLineBreaks('[サークル名]は、漫画・小説を中心に活動する合同同人サークル。\n気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。\n\nまた、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。\nメンバー同士で切磋琢磨しながら、創作を行っています。')),
       e('div', { className: 'hero-buttons' },
         e('a', { className: 'button primary', href: '#works' }, '既刊を見る'),
         e('a', { className: 'button secondary', href: '#join' }, 'メンバー募集'),
@@ -167,11 +168,11 @@ function Works() {
       works.map((work) => e('article', { className: 'book-card', key: work.title },
         e('div', { className: 'book-cover' },
           e('span', { className: 'book-index' }, work.tags[0]),
-          ...work.cover,
+          ...withLineBreaks(work.cover),
         ),
         e('div', { className: 'book-body' },
           e('h3', null, work.title),
-          e('p', null, work.description),
+          e('p', null, ...withLineBreaks(work.description)),
           work.tags.map((tag) => e('span', { className: 'tag', key: tag }, tag)),
         ),
       )),
@@ -186,7 +187,7 @@ function Members() {
       members.map((member) => e('article', { className: 'member-card', key: member.name },
         e('div', { className: 'member-icon', 'aria-hidden': 'true' }, member.initial),
         e('h3', null, member.name),
-        e('p', null, member.description),
+        e('p', null, ...withLineBreaks(member.description)),
         member.links?.length > 0 && e('div', { className: 'sns' },
           member.links.map((link) => e('a', {
             key: link.label,
@@ -211,7 +212,7 @@ function Activities() {
         ),
         e('div', null,
           e('strong', null, activity.title),
-          e('p', null, activity.description),
+          e('p', null, ...withLineBreaks(activity.description)),
         ),
       )),
     ),
