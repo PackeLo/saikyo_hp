@@ -1,0 +1,10 @@
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+
+await rm('dist', { recursive: true, force: true });
+await mkdir('dist/src', { recursive: true });
+await cp('src', 'dist/src', { recursive: true });
+
+const html = await readFile('index.html', 'utf8');
+await writeFile('dist/index.html', html.replaceAll('/src/', './src/'));
+
+console.log('Built static React site to dist/');
