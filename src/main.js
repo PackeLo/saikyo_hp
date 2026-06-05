@@ -22,36 +22,81 @@ const works = [
   {
     cover: ['白本'],
     title: '白本',
-    description: 'A5 / 40P / フルカラー合同イラスト本',
+    description: 'A5 / ?P / モノクロ\n記念すべき一冊目。\n参加メンバー：',
     tags: ['COMITIA', '創作'],
   },
   {
     cover: ['赤本'],
     title: '赤本',
-    description: '花と夢をテーマにした合同作品集。',
-    tags: ['イラスト', '小説'],
+    description: 'A5 / ?P / モノクロ\n参加メンバー：',
+    tags: ['COMITIA', '創作'],
   },
   {
     cover: ['黒本'],
     title: '黒本',
-    description: 'メンバーそれぞれの色を集めた一冊。',
-    tags: ['合同誌', '通販あり'],
+    description: 'A5 / ?P / モノクロ\n参加メンバー：',
+    tags: ['COMITIA', '創作'],
   },
 ];
 
 const members = [
-  { initial: 'サムネ', name: 'のこう', description: '[自己紹介]' },
-  { initial: 'サムネ', name: 'めあり', description: '[自己紹介]' },
-  { initial: 'サムネ', name: 'きりいろ', description: '[自己紹介]' },
-  { initial: 'サムネ', name: 'たつたあげ', description: '[自己紹介]' },
-  { initial: 'サムネ', name: '外道', description: '[自己紹介]' },
-  { initial: 'サムネ', name: 'package.lock.json', description: '[自己紹介]' },
+  {
+    initial: 'サムネ',
+    name: 'のこう',
+    description: '[自己紹介]',
+    links: [
+      { label: 'X', href: '#' },
+      { label: 'Pixiv', href: '#' },
+      { label: 'Website', href: '#' },
+    ],
+  },
+  {
+    initial: 'サムネ',
+    name: 'めあり',
+    description: '[自己紹介]',
+    links: [
+      { label: 'X', href: '#' },
+      { label: 'Portfolio', href: '#' },
+    ],
+  },
+  {
+    initial: 'サムネ',
+    name: 'きりいろ',
+    description: '[自己紹介]',
+    links: [
+      { label: 'X', href: '#' },
+      { label: 'Pixiv', href: '#' },
+    ],
+  },
+  {
+    initial: 'サムネ',
+    name: 'たつたあげ',
+    description: '[自己紹介]',
+    links: [
+      { label: 'X', href: '#' },
+    ],
+  },
+  {
+    initial: 'サムネ',
+    name: '外道',
+    description: '[自己紹介]',
+    links: [
+      { label: 'Website', href: '#' },
+      { label: 'Booth', href: '#' },
+    ],
+  },
+  {
+    initial: 'サムネ',
+    name: 'package.lock.json',
+    description: '[自己紹介]',
+    links: [],
+  },
 ];
 
 const activities = [
-  { date: '2026 Spring', title: '合同イラスト本制作', description: 'テーマを決めて、メンバーそれぞれが作品を制作。' },
-  { date: '2026 Summer', title: 'イベント参加予定', description: '新刊頒布、既刊展示、ペーパー配布など。' },
-  { date: '2026 Autumn', title: 'Web展示企画', description: 'サイト上でミニギャラリー企画を公開予定。' },
+  { date: '2026 Spring', title: '合同イラスト本制作', description: 'テーマを決めて、メンバーそれぞれが作品を制作。（適当）' },
+  { date: '2026 Summer', title: 'イベント参加予定', description: '新刊頒布、既刊展示、ペーパー配布など。（適当）' },
+  { date: '2026 Autumn', title: 'Web展示企画', description: 'サイト上でミニギャラリー企画を公開予定。（適当）' },
 ];
 
 function Header() {
@@ -79,7 +124,7 @@ function Hero() {
   return e('section', { className: 'hero', id: 'top' },
     e('div', { className: 'hero-text' },
       e('p', { className: 'hero-kicker' }, 'Doujin Circle / Illustration / Manga / Novel'),
-      e('h1', null, 'これが俺達の、', br(), '最強だ。'),
+      e('h1', null, 'これが俺の、', br(), '最強だ。'),
       e('p', null,
         '[サークル名]は、漫画・小説を中心に活動する合同同人サークル。',
         '気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。',
@@ -96,7 +141,7 @@ function Hero() {
       e('div', { className: 'hero-visual', role: 'img', 'aria-label': '[サークル名]のキービジュアル' }),
       e('div', { className: 'hero-panel' },
         e('span', null, 'Featured'),
-        e('strong', null, '2026 Spring Zine'),
+        e('strong', null, '2026/10 関西コミティア'),
         e('p', null, '制作中'),
       ),
     ),
@@ -142,9 +187,13 @@ function Members() {
         e('div', { className: 'member-icon', 'aria-hidden': 'true' }, member.initial),
         e('h3', null, member.name),
         e('p', null, member.description),
-        e('div', { className: 'sns' },
-          e('a', { href: '#' }, 'X'),
-          e('a', { href: '#' }, 'Pixiv'),
+        member.links?.length > 0 && e('div', { className: 'sns' },
+          member.links.map((link) => e('a', {
+            key: link.label,
+            href: link.href,
+            target: '_blank',
+            rel: 'noreferrer',
+          }, link.label)),
         ),
       )),
     ),
