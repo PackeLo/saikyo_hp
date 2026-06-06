@@ -29,7 +29,7 @@ const works = [
   {
     cover: ['白本'],
     title: '白本',
-    description: 'A5 / ?P / モノクロ\n記念すべき一冊目。\n参加メンバー：',
+    description: 'A5 / ?P / モノクロ\n参加メンバー：',
     tags: ['COMITIA', '創作'],
   },
   {
@@ -41,7 +41,7 @@ const works = [
   {
     cover: ['黒本'],
     title: '黒本',
-    description: 'A5 / ?P / モノクロ\n参加メンバー：',
+    description: 'A5 / ?P / モノクロ\n記念すべき一冊目。\n参加メンバー：',
     tags: ['COMITIA', '創作'],
   },
 ];
@@ -85,7 +85,7 @@ const members = [
   },
   {
     initial: 'サムネ',
-    name: '外道',
+    name: '変態地獄外道',
     description: '[自己紹介]',
     links: [
       { label: 'Website', href: '#' },
@@ -132,13 +132,18 @@ function Hero() {
     e('div', { className: 'hero-text' },
       e('p', { className: 'hero-kicker' }, 'Doujin Circle / Illustration / Manga / Novel'),
       e('h1', null, 'ジャンルのつかない', br(), '漫画へ'),
-      e('p', null, ...withLineBreaks('雑居ビルは、漫画・小説を中心に活動する合同同人サークルです。\n気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。\n\nまた、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。\nメンバー同士で切磋琢磨しながら、創作を行っています。')),
+      e('p', null, ...withLineBreaks('サークル「雑居ビル」は、漫画・小説を中心に活動する合同同人サークルです。\n気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。\n\nまた、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。\nメンバー同士で切磋琢磨しながら、創作を行っています。')),
       e('div', { className: 'hero-buttons' },
         e('a', { className: 'button primary', href: '#works' }, '既刊を見る'),
         e('a', { className: 'button secondary', href: '#join' }, 'メンバー募集'),
       ),
     ),
     e('div', { className: 'hero-visual-wrap' },
+      e('div', { className: 'hero-signs', 'aria-hidden': 'true' },
+        e('span', { className: 'hero-sign hero-sign-a' }, '同人'),
+        e('span', { className: 'hero-sign hero-sign-b' }, '漫画'),
+        e('span', { className: 'hero-sign hero-sign-c' }, '小説'),
+      ),
       e('div', { className: 'hero-visual', role: 'img', 'aria-label': '雑居ビルのキービジュアル' }),
       e('div', { className: 'hero-panel' },
         e('span', null, 'Featured'),
@@ -235,7 +240,7 @@ function Join() {
 
 function App() {
   return e(React.StrictMode, null,
-    e('div', { className: 'app-shell blade-refined' },
+    e('div', { className: 'app-shell zakkyo-theme' },
       e(Header),
       e('main', null,
         e(Hero),
