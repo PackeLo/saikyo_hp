@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "UiLatin";
+  src:
+    local("Helvetica Neue Light"),
+    local("HelveticaNeue-Light"),
+    local("Avenir Next Regular"),
+    local("AvenirNext-Regular"),
+    local("Segoe UI Light"),
+    local("Segoe UI");
+  font-weight: 300 500;
+  unicode-range: U+0000-00FF, U+0100-024F;
+}
+
+@font-face {
+  font-family: "UiLatin";
+  src:
+    local("Helvetica Neue"),
+    local("HelveticaNeue"),
+    local("Avenir Next Demi Bold"),
+    local("AvenirNext-DemiBold"),
+    local("Segoe UI Semibold"),
+    local("Arial");
+  font-weight: 600 900;
+  unicode-range: U+0000-00FF, U+0100-024F;
+}
+
 :root {
   --bg: #fbfaf7;
   --bg-alt: #f2eee8;
@@ -25,12 +51,13 @@ html {
 
 body {
   margin: 0;
-  font-family: "Avenir Next", "Segoe UI", "Yu Gothic", "Hiragino Sans", sans-serif;
+  font-family: "UiLatin", "Yu Gothic", "Hiragino Sans", sans-serif;
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(214, 26, 114, 0.06), transparent 24%),
     radial-gradient(circle at 100% 22%, rgba(0, 169, 194, 0.08), transparent 18%),
     linear-gradient(180deg, #fffcf7 0%, #f7f1ea 100%);
+  font-synthesis: none;
   letter-spacing: 0.01em;
 }
 
@@ -64,6 +91,10 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.font-strong {
+  font-family: "Avenir Next" !important;
 }
 
 header {
