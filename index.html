@@ -3,19 +3,247 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Starry Atelier</title>
-    <script type="importmap">
-      {
-        "imports": {
-          "react": "https://esm.sh/react@19.2.1",
-          "react-dom/client": "https://esm.sh/react-dom@19.2.1/client"
-        }
-      }
-    </script>
+    <title>サークル 雑居ビル</title>
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="app-shell zakkyo-theme">
+      <header>
+        <div class="header-inner">
+          <a class="logo" href="#top">雑居ビル</a>
+          <nav aria-label="メインナビゲーション">
+            <a href="#members">Members</a>
+            <a href="#activities">Activities</a>
+            <a href="#works">Works</a>
+            <a href="#join">Join Us</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section class="hero" id="top">
+          <div class="hero-text">
+            <p class="hero-kicker">Doujin Circle / Illustration / Manga / Novel</p>
+            <h1>ジャンルのつかない<br />漫画へ</h1>
+            <p>
+              サークル「雑居ビル」は、漫画・小説を中心に活動する合同同人サークルです。<br />
+              気の向くままに作った、メンバーそれぞれの最強の作品を集めて本にしています。<br />
+              <br />
+              また、作品作りが終わったら講評会を実施。Discordの雑談チャネルで作品作りの相談も。<br />
+              メンバー同士で切磋琢磨しながら、創作を行っています。
+            </p>
+            <div class="hero-buttons">
+              <a class="button primary" href="#works">既刊を見る</a>
+              <a class="button secondary" href="#join">メンバー募集</a>
+            </div>
+          </div>
+          <div class="hero-visual-wrap">
+            <div class="hero-signs" aria-hidden="true">
+              <span class="hero-sign hero-sign-a">同人</span>
+              <span class="hero-sign hero-sign-b">漫画</span>
+              <span class="hero-sign hero-sign-c">小説</span>
+            </div>
+            <div class="hero-visual" role="img" aria-label="雑居ビルのキービジュアル"></div>
+            <div class="hero-panel">
+              <span>Featured</span>
+              <strong class="font-strong">2026/10/8 関西コミティア</strong>
+              <p>制作中</p>
+            </div>
+          </div>
+        </section>
+
+        <section aria-label="サイトメニュー">
+          <div class="menu-cards">
+            <a class="menu-card" href="#members">
+              <div class="icon" aria-hidden="true">01</div>
+              <h3 class="font-strong">Members</h3>
+              <p>メンバーのX・Pixivリンクとプロフィール。</p>
+            </a>
+            <a class="menu-card" href="#activities">
+              <div class="icon" aria-hidden="true">02</div>
+              <h3 class="font-strong">Activities</h3>
+              <p>合同誌制作、イベント参加など。</p>
+            </a>
+            <a class="menu-card" href="#works">
+              <div class="icon" aria-hidden="true">03</div>
+              <h3 class="font-strong">Works</h3>
+              <p>これまで発行した合同本の紹介。</p>
+            </a>
+            <a class="menu-card" href="#join">
+              <div class="icon" aria-hidden="true">04</div>
+              <h3 class="font-strong">Join Us</h3>
+              <p>いっしょに本を作る仲間を募集中。</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="works">
+          <div class="section-title">
+            <span class="section-caption">既刊の合同本</span>
+            <div class="section-heading">
+              <h2 class="font-strong">Works</h2>
+              <span class="section-rule" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="works-grid">
+            <article class="book-card">
+              <div class="book-cover">
+                <span class="book-index">COMITIA</span>
+                白本
+              </div>
+              <div class="book-body">
+                <h3>白本</h3>
+                <p>A5 / ?P / モノクロ<br />参加メンバー：</p>
+                <span class="tag">COMITIA</span>
+                <span class="tag">創作</span>
+              </div>
+            </article>
+            <article class="book-card">
+              <div class="book-cover">
+                <span class="book-index">COMITIA</span>
+                赤本
+              </div>
+              <div class="book-body">
+                <h3>赤本</h3>
+                <p>A5 / ?P / モノクロ<br />参加メンバー：</p>
+                <span class="tag">COMITIA</span>
+                <span class="tag">創作</span>
+              </div>
+            </article>
+            <article class="book-card">
+              <div class="book-cover">
+                <span class="book-index">COMITIA</span>
+                黒本
+              </div>
+              <div class="book-body">
+                <h3>黒本</h3>
+                <p>A5 / ?P / モノクロ<br />記念すべき一冊目。<br />参加メンバー：</p>
+                <span class="tag">COMITIA</span>
+                <span class="tag">創作</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="members">
+          <div class="section-title">
+            <span class="section-caption">メンバー紹介</span>
+            <div class="section-heading">
+              <h2 class="font-strong">Members</h2>
+              <span class="section-rule" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="members-grid">
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>のこう</h3>
+              <p>[自己紹介]</p>
+              <div class="sns">
+                <a href="#" target="_blank" rel="noreferrer">X</a>
+                <a href="#" target="_blank" rel="noreferrer">Pixiv</a>
+                <a href="#" target="_blank" rel="noreferrer">Website</a>
+              </div>
+            </article>
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>めあり</h3>
+              <p>[自己紹介]</p>
+              <div class="sns">
+                <a href="#" target="_blank" rel="noreferrer">X</a>
+                <a href="#" target="_blank" rel="noreferrer">Portfolio</a>
+              </div>
+            </article>
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>きりいろ</h3>
+              <p>[自己紹介]</p>
+              <div class="sns">
+                <a href="#" target="_blank" rel="noreferrer">X</a>
+                <a href="#" target="_blank" rel="noreferrer">Pixiv</a>
+              </div>
+            </article>
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>たつたあげ</h3>
+              <p>[自己紹介]</p>
+              <div class="sns">
+                <a href="#" target="_blank" rel="noreferrer">X</a>
+              </div>
+            </article>
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>変態地獄外道</h3>
+              <p>[自己紹介]</p>
+              <div class="sns">
+                <a href="#" target="_blank" rel="noreferrer">Website</a>
+                <a href="#" target="_blank" rel="noreferrer">Booth</a>
+              </div>
+            </article>
+            <article class="member-card">
+              <div class="member-icon" aria-hidden="true">サムネ</div>
+              <h3>package.lock.json</h3>
+              <p>[自己紹介]</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="activities">
+          <div class="section-title">
+            <span class="section-caption">活動内容</span>
+            <div class="section-heading">
+              <h2 class="font-strong">Activities</h2>
+              <span class="section-rule" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="date">
+                <span>Schedule</span>
+                2026 Spring
+              </div>
+              <div>
+                <strong>合同イラスト本制作</strong>
+                <p>テーマを決めて、メンバーそれぞれが作品を制作。（適当.）</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="date">
+                <span>Schedule</span>
+                2026 Summer
+              </div>
+              <div>
+                <strong>イベント参加予定</strong>
+                <p>新刊頒布、既刊展示、ペーパー配布など。（適当）</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="date">
+                <span>Schedule</span>
+                2026 Autumn
+              </div>
+              <div>
+                <strong>Web展示企画</strong>
+                <p>サイト上でミニギャラリー企画を公開予定。（適当）</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="join">
+          <div class="section-title">
+            <span class="section-caption">メンバー募集</span>
+            <div class="section-heading">
+              <h2 class="font-strong">Join Us</h2>
+              <span class="section-rule" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="join-box">
+            <h3 class="font-strong">いっしょに創作する仲間を募集中！</h3>
+            <p>イラスト、漫画、小説、デザイン、編集など、創作が好きな人を歓迎しています！ 活動ペースはゆるめ。無理なく楽しく、合同本を作っていくサークルです。</p>
+            <a class="button primary" href="#">応募・お問い合わせ</a>
+          </div>
+        </section>
+      </main>
+      <footer>© 雑居ビル / Since 2026</footer>
+    </div>
   </body>
 </html>

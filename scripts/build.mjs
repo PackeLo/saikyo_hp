@@ -7,4 +7,4 @@ await cp('src', 'dist/src', { recursive: true });
 const html = await readFile('index.html', 'utf8');
 await writeFile('dist/index.html', html.replaceAll('/src/', './src/'));
 
-console.log('Built static React site to dist/');
+console.log('Built static site to dist/');
