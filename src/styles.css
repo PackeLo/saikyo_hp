@@ -948,32 +948,35 @@ body:has(.app-shell.zakkyo-theme)::after {
 .zakkyo-theme main::after {
   content: "";
   position: fixed;
-  left: -4%;
-  width: 108%;
+  left: 50%;
+  width: calc(100vw + 144px);
   pointer-events: none;
   opacity: 0.32;
   z-index: -1;
   background-repeat: repeat-x;
+  background-position: 0 center, 36px center;
   background-size: 72px 34px, 72px 34px;
+  mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.88) 54px, rgba(0, 0, 0, 0.88) calc(100% - 54px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.88) 54px, rgba(0, 0, 0, 0.88) calc(100% - 54px), transparent 100%);
 }
 
 .zakkyo-theme main::before {
   top: 84px;
-  height: 86px;
-  transform: rotate(-2.2deg);
+  height: 64px;
+  transform: translateX(-50%) rotate(-2.2deg);
   background-image:
-    radial-gradient(circle at 17px 17px, rgba(255, 212, 117, 0.95) 0 10px, transparent 11px),
-    radial-gradient(circle at 53px 17px, rgba(227, 149, 74, 0.82) 0 8px, transparent 9px);
+    radial-gradient(circle at center, rgba(255, 212, 117, 0.95) 0 10px, transparent 11px),
+    radial-gradient(circle at center, rgba(227, 149, 74, 0.82) 0 8px, transparent 9px);
   filter: drop-shadow(0 0 8px rgba(243, 198, 112, 0.12));
 }
 
 .zakkyo-theme main::after {
   top: 62vh;
-  height: 74px;
-  transform: rotate(1.4deg);
+  height: 56px;
+  transform: translateX(-50%) rotate(1.4deg);
   background-image:
-    radial-gradient(circle at 20px 16px, rgba(255, 223, 154, 0.9) 0 9px, transparent 10px),
-    radial-gradient(circle at 56px 16px, rgba(242, 176, 95, 0.76) 0 7px, transparent 8px);
+    radial-gradient(circle at center, rgba(255, 223, 154, 0.9) 0 9px, transparent 10px),
+    radial-gradient(circle at center, rgba(242, 176, 95, 0.76) 0 7px, transparent 8px);
   filter: drop-shadow(0 0 6px rgba(243, 198, 112, 0.1));
 }
 
@@ -1243,12 +1246,12 @@ body:has(.app-shell.zakkyo-theme)::after {
 @media (max-width: 980px) {
   .zakkyo-theme main::before {
     top: 72px;
-    background-size: 60px 30px, 60px 30px;
+    height: 58px;
   }
 
   .zakkyo-theme main::after {
     top: 64vh;
-    background-size: 58px 28px, 58px 28px;
+    height: 50px;
   }
 
   .zakkyo-theme .hero-signs {
@@ -1272,21 +1275,20 @@ body:has(.app-shell.zakkyo-theme)::after {
 @media (max-width: 720px) {
   .zakkyo-theme main::before,
   .zakkyo-theme main::after {
-    left: -8%;
-    width: 116%;
+    width: calc(100vw + 104px);
     opacity: 0.22;
+    mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.86) 34px, rgba(0, 0, 0, 0.86) calc(100% - 34px), transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, 0.86) 34px, rgba(0, 0, 0, 0.86) calc(100% - 34px), transparent 100%);
   }
 
   .zakkyo-theme main::before {
     top: 68px;
-    height: 58px;
-    background-size: 46px 22px, 46px 22px;
+    height: 42px;
   }
 
   .zakkyo-theme main::after {
     top: 66vh;
-    height: 52px;
-    background-size: 42px 20px, 42px 20px;
+    height: 36px;
   }
 
   .zakkyo-theme .hero {
