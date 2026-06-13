@@ -79,7 +79,7 @@ body::after {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.45), transparent 24%),
+    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.45), transparent 4%),
     linear-gradient(120deg, transparent 0 45%, rgba(214, 26, 114, 0.014) 50%, transparent 55%),
     linear-gradient(300deg, transparent 0 47%, rgba(0, 169, 194, 0.012) 50%, transparent 53%);
 }
@@ -102,14 +102,13 @@ header {
   top: 0;
   z-index: 10;
   background: rgba(251, 250, 247, 0.88);
-  backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(118, 38, 28, 0.1);
 }
 
 .header-inner {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 18px 36px;
+  padding: 12px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -119,7 +118,7 @@ header {
 .logo {
   font-weight: 900;
   font-size: 26px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -129,7 +128,7 @@ nav {
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
 }
 
 nav a {
@@ -193,7 +192,7 @@ section {
   gap: 10px;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
 }
@@ -231,7 +230,7 @@ section {
 
 .hero-text p:not(.hero-kicker) {
   max-width: 42rem;
-  margin: 0 0 30px;
+  margin: 0 0 24px;
   font-size: 17px;
   line-height: 1.95;
   color: var(--text-soft);
@@ -246,12 +245,13 @@ section {
 
 .button {
   display: inline-block;
-  padding: 10px 24px;
+  padding: 18px 22px;
   border: 1px solid var(--line-strong);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-transform: none;
+  border-radius: 16px;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -374,28 +374,28 @@ section {
 
 .section-title {
   display: grid;
-  gap: 10px;
+  gap: 0px;
   margin-bottom: 24px;
 }
 
 .section-heading {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
 }
 
 .section-heading h2 {
   margin: 0;
   font-size: 44px;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 500;
   letter-spacing: -0.03em;
 }
 
 .section-rule {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(118, 38, 28, 0.3), rgba(214, 26, 114, 0.1), transparent);
+  background: linear-gradient(90deg, rgba(118, 38, 28, 0.1), rgba(214, 26, 114, 0.1), transparent);
 }
 
 .menu-cards {
@@ -521,7 +521,7 @@ section {
 }
 
 .book-index {
-  margin-bottom: auto;
+  margin-bottom: 0;
   color: rgba(255, 255, 255, 0.88);
 }
 
@@ -534,7 +534,7 @@ section {
 .book-body h3,
 .member-card h3,
 .join-box h3 {
-  margin: 0 0 12px;
+  margin: 0px 0 12px 0;
   font-size: 26px;
   font-weight: 400;
 }
@@ -564,15 +564,16 @@ section {
 .member-card::before {
   content: "";
   position: absolute;
-  inset: 16px 16px auto;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(184, 138, 59, 0.75), transparent);
+  inset: 4px 20px 0px 20px;
+  height: 2px;
+  background: 
+    linear-gradient(90deg, rgba(184, 138, 59, 0.75), rgba(156, 111, 15, 0.35));
 }
 
 .member-icon {
   width: 92px;
   height: 92px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   display: grid;
   place-items: center;
   border: 1px solid rgba(118, 38, 28, 0.16);
@@ -580,30 +581,32 @@ section {
     linear-gradient(135deg, rgba(201, 53, 44, 0.92), rgba(184, 138, 59, 0.62)),
     linear-gradient(180deg, rgba(214, 26, 114, 0.16), rgba(0, 169, 194, 0.12));
   color: #fffdf8;
-  font-size: 34px;
+  font-size: 14px;
   font-weight: 900;
 }
 
 .sns {
   display: flex;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 6px;
+  margin-top: 12px;
 }
 
 .sns a {
-  padding: 9px 14px;
+  padding: 8px 14px;
   border: 1px solid var(--line);
   color: var(--text);
   background: rgba(255, 255, 255, 0.72);
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 550;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 
 .Quesqtion {
-  padding: 9px 14px;
+  padding: 12px 14px;
+  margin: 28px 0px 6px 0px;
   border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.01);
   color: var(--text);
   font-size: 16px;
   font-weight: 600;
@@ -612,12 +615,13 @@ section {
 }
 
 .Answer {
-  margin-bottom: 24px;
+  margin: 0px 0px 0px 0px;
   padding: 3px 14px;
   color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.04);
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   line-height: 1.85;
 }
@@ -699,7 +703,7 @@ section {
 .join-buttons {
   margin: 10px 0px 8px 0;
   display: flex;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -1031,9 +1035,9 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .hero-text h1 {
-  font-size: clamp(54px, 7.4vw, 104px);
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-size: clamp(54px, 7.4vw, 98px);
+  line-height: 1.2;
+  letter-spacing: -0.08em;
   text-shadow:
     0 8px 30px rgba(0, 0, 0, 0.28),
     0 0 16px rgba(232, 190, 112, 0.08);
@@ -1068,7 +1072,7 @@ body:has(.app-shell.zakkyo-theme)::after {
 
 .zakkyo-theme .hero-signs {
   position: absolute;
-  inset: -4px auto auto -24px;
+  inset: -4px auto auto -18px;
   display: grid;
   gap: 12px;
   z-index: 2;
@@ -1079,13 +1083,13 @@ body:has(.app-shell.zakkyo-theme)::after {
   align-items: center;
   justify-content: center;
   min-width: 84px;
-  padding: 12px 14px;
-  border: 1px dotted rgba(255, 201, 98, 0.9);
-  border-radius: 999px;
+  padding: 10px 0px;
+  border: 1px solid rgba(255, 201, 98, 0.3);
+  border-radius: 90px;
   font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: none;
   box-shadow:
     0 12px 22px rgba(0, 0, 0, 0.2),
     0 0 16px rgba(243, 198, 112, 0.1);
@@ -1094,32 +1098,31 @@ body:has(.app-shell.zakkyo-theme)::after {
 .zakkyo-theme .hero-sign-a {
   background: linear-gradient(135deg, #3a3a3f, #242428);
   color: #f7f3ea;
-  transform: rotate(-5deg);
+  transform: rotate(-6deg);
 }
 
 .zakkyo-theme .hero-sign-b {
   background: linear-gradient(135deg, #46464d, #2b2b31);
   color: #faf6ed;
-  transform: translateX(28px) rotate(4deg);
+  transform: translateX(6px) rotate(2deg);
 }
 
 .zakkyo-theme .hero-sign-c {
   background: linear-gradient(135deg, #53535b, #313138);
   color: #f8f4ea;
-  transform: translateX(8px) rotate(-3deg);
+  transform: translateX(8px) rotate(-8deg);
 }
 
 .zakkyo-theme .hero-visual {
   min-height: 560px;
   border: 1px solid rgba(214, 179, 109, 0.24);
   background:
-    radial-gradient(circle at 20% 18%, rgba(232, 190, 112, 0.08), transparent 16%),
-    radial-gradient(circle at 80% 24%, rgba(232, 190, 112, 0.05), transparent 16%),
+    radial-gradient(circle at 16% 14%, rgba(232, 190, 112, 0.2), transparent 16%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%),
     repeating-linear-gradient(90deg, rgba(255, 241, 223, 0.04) 0 46px, transparent 46px 92px),
     linear-gradient(180deg, rgba(10, 11, 14, 0.2), rgba(10, 11, 14, 0.42)),
     linear-gradient(145deg, #323237, #1d1d21 58%, #141418);
-  box-shadow: 16px 16px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: 16px 16px 36px rgba(0, 0, 0, 0.22);
 }
 
 .zakkyo-theme .hero-visual::before {
@@ -1139,13 +1142,15 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .hero-panel {
-  left: 20px;
-  bottom: 22px;
-  width: min(310px, calc(100% - 40px));
-  background: linear-gradient(180deg, rgba(48, 48, 52, 0.94), rgba(25, 25, 28, 0.94));
-  border: 1px dotted rgba(255, 201, 98, 0.8);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.24);
-  border-radius: 8px;
+  left: 28%;
+  padding: 12px 0px 0px 26px;
+  bottom: 16%;
+  width: min(76%);
+  height: min(160px);
+  background: linear-gradient(180deg, rgba(48, 48, 52, 0.98), rgba(25, 25, 28, 0.94));
+  border: 5px solid rgba(255, 201, 98, 0.7);
+  box-shadow: 12px 14px 8px 0px rgba(0, 0, 0, 0.34);
+  border-radius: 18px;
 }
 
 .zakkyo-theme .hero-panel p {
@@ -1162,7 +1167,7 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .section-rule {
-  background: linear-gradient(90deg, rgba(214, 179, 109, 0.78), rgba(0, 207, 255, 0.5) 34%, rgba(231, 43, 155, 0.42) 58%, transparent 78%);
+  background: linear-gradient(90deg, rgba(214, 179, 109, 0.78), rgba(51, 28, 185, 0.5) 34%, rgba(231, 43, 155, 0.42) 58%, transparent 78%);
 }
 
 .zakkyo-theme .menu-card,
