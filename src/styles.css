@@ -1225,9 +1225,9 @@ body:has(.app-shell.zakkyo-theme)::after {
 .zakkyo-theme .tag,
 .zakkyo-theme .sns a {
   color: #efe9dd;
-  border: 1px dotted rgba(255, 201, 98, 0.72);
+  border: 2px solid rgba(255, 201, 98, 0.1);
   background: rgba(214, 179, 109, 0.08);
-  border-radius: 999px;
+  border-radius: 12px;
 }
 
 .zakkyo-theme .member-icon {
