@@ -288,6 +288,11 @@ section {
   position: relative;
   overflow: hidden;
 }
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .hero-visual::before,
 .hero-visual::after {
@@ -321,11 +326,10 @@ section {
 }
 
 .hero-panel::after {
-  content: "";
   position: absolute;
-  inset: auto 16px 0;
+  inset: 3px 16px 0px;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--gold), var(--fuchsia), var(--cyan));
+  background: linear-gradient(90deg, transparent, var(--cyan), var(--fuchsia), var(--gold), transparent);
 }
 
 .hero-panel strong {
@@ -571,7 +575,7 @@ section {
 
 .sns {
   display: flex;
-  gap: 6px;
+  gap: 4px;
   margin-top: 12px;
 }
 
@@ -1091,7 +1095,7 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .hero-visual {
-  min-height: 560px;
+  min-height: 460px;
   border: 1px solid rgba(214, 179, 109, 0.24);
   background:
     radial-gradient(circle at 16% 14%, rgba(232, 190, 112, 0.2), transparent 16%),
@@ -1103,19 +1107,20 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .hero-visual::before {
-  inset: 18px;
+  inset: 14px;
   border: 2px dotted rgba(255, 201, 98, 0.72);
 }
 
 .zakkyo-theme .hero-visual::after {
-  inset: 30px 24px auto auto;
-  width: 144px;
-  height: 46px;
+  
+  inset: 0px 0px auto auto;
+  width: 194px;
+  height: 18px;
   opacity: 1;
   background-image: none;
   background:
-    linear-gradient(90deg, rgba(0, 207, 255, 0.95), rgba(231, 43, 155, 0.95));
-  box-shadow: 0 0 16px rgba(231, 43, 155, 0.18);
+    linear-gradient(90deg, rgba(0, 207, 255, 0.65), rgba(231, 43, 155, 0.65));
+  box-shadow: 42px 12px 0px rgba(231, 43, 155, 0.18);
 }
 
 .zakkyo-theme .hero-panel {
@@ -1132,6 +1137,7 @@ body:has(.app-shell.zakkyo-theme)::after {
 
 .zakkyo-theme .hero-panel p {
   color: #cdc1b4;
+  font-size: 16px;
 }
 
 .zakkyo-theme .section-heading h2,
@@ -1227,7 +1233,7 @@ body:has(.app-shell.zakkyo-theme)::after {
   color: #efe9dd;
   border: 2px solid rgba(255, 201, 98, 0.1);
   background: rgba(214, 179, 109, 0.08);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .zakkyo-theme .member-icon {
@@ -1352,7 +1358,7 @@ body:has(.app-shell.zakkyo-theme)::after {
   }
 
   .zakkyo-theme .hero-visual {
-    min-height: 400px;
+    min-height: 380px;
   }
 
   .zakkyo-theme .hero-panel {
