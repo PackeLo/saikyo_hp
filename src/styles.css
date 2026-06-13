@@ -243,13 +243,14 @@ section {
   flex-wrap: wrap;
 }
 
+
 .button {
   display: inline-block;
-  padding: 14px 22px;
+  padding: 10px 24px;
   border: 1px solid var(--line-strong);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -329,10 +330,10 @@ section {
 
 .hero-panel strong {
   display: block;
-  margin-top: 12px;
+  margin-top: 8px;
   font-size: 24px;
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .hero-panel p {
@@ -399,8 +400,8 @@ section {
 
 .menu-cards {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .menu-card,
@@ -415,8 +416,8 @@ section {
 
 .menu-card {
   position: relative;
-  padding: 24px;
-  min-height: 220px;
+  padding: 10px;
+  min-height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -434,7 +435,7 @@ section {
 }
 
 .menu-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-2px);
   border-color: rgba(184, 138, 59, 0.45);
   background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 239, 231, 0.98));
 }
@@ -444,10 +445,11 @@ section {
 }
 
 .menu-card .icon {
+  margin: -0px 0px -0px -0px;
   color: var(--accent);
-  font-size: 38px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.06em;
 }
 
 .menu-card h3,
@@ -459,12 +461,12 @@ section {
 }
 
 .menu-card h3 {
-  margin: 0;
+  margin: 0px 0px 0px 0px;
   font-size: 24px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
-.menu-card p,
+
 .book-body p,
 .member-card p,
 .timeline-item p,
@@ -477,7 +479,7 @@ section {
 .works-grid,
 .members-grid {
   display: grid;
-  gap: 22px;
+  gap: 6px;
 }
 
 .works-grid {
@@ -495,16 +497,16 @@ section {
 
 .book-cover {
   position: relative;
-  aspect-ratio: 4 / 3;
-  padding: 28px;
+  aspect-ratio: 1/ 1;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 6px;  
   font-size: clamp(28px, 4vw, 44px);
   line-height: 0.95;
   color: #ffffff;
-  font-weight: 900;
+  font-weight: 300;
   background:
     linear-gradient(140deg, rgba(10, 10, 12, 0.18), rgba(10, 10, 12, 0.44)),
     linear-gradient(135deg, var(--accent-deep), var(--accent) 52%, var(--gold) 100%);
@@ -532,9 +534,9 @@ section {
 .book-body h3,
 .member-card h3,
 .join-box h3 {
-  margin: 0 0 10px;
-  font-size: 28px;
-  font-weight: 900;
+  margin: 0 0 12px;
+  font-size: 26px;
+  font-weight: 400;
 }
 
 .tag {
@@ -603,21 +605,21 @@ section {
   padding: 9px 14px;
   border: 1px solid var(--line);
   color: var(--text);
-  font-size: 14px;
-  font-weight: 800;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .Answer {
   margin-bottom: 24px;
-  padding: 3px 14
-px;
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 800;
+  padding: 3px 14px;
+  color: var(--text-soft);
+  font-size: 16px;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  line-height: 1.85;
 }
 
 
@@ -668,7 +670,7 @@ px;
 
 .join-box {
   position: relative;
-  padding: 36px 32px;
+  padding: 28px 28px;
   overflow: hidden;
 }
 
@@ -694,8 +696,15 @@ px;
   background: radial-gradient(circle, rgba(201, 53, 44, 0.12), rgba(214, 26, 114, 0.08), transparent 70%);
 }
 
+.join-buttons {
+  margin: 10px 0px 8px 0;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
 .join-box .button {
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 footer {
@@ -759,7 +768,7 @@ footer {
 }
 
 .app-shell.blade-refined .join-box .button.primary {
-  padding-right: 30px;
+  padding-right: 300px;
   border-width: 2px;
   position: relative;
 }
@@ -854,9 +863,9 @@ footer {
   }
 
   .hero-visual::after {
-    inset: 42px 20px 42px auto;
+    inset:42px 20px 42px auto;
     width: min(46%, 140px);
-    opacity: 0.08;
+    opacity: 0.18;
   }
 
   .menu-cards,
@@ -1115,7 +1124,7 @@ body:has(.app-shell.zakkyo-theme)::after {
 
 .zakkyo-theme .hero-visual::before {
   inset: 18px;
-  border: 1px dotted rgba(255, 201, 98, 0.72);
+  border: 2px dotted rgba(255, 201, 98, 0.72);
 }
 
 .zakkyo-theme .hero-visual::after {
@@ -1179,16 +1188,16 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .menu-card {
-  min-height: 236px;
-  overflow: hidden;
+  min-height: 150px;
+  overflow: auto;
 }
 
 .zakkyo-theme .menu-card::before {
   content: "";
   position: absolute;
   inset: 0 auto 0 0;
-  width: 3px;
-  background: linear-gradient(180deg, rgba(0, 207, 255, 0.92), rgba(231, 43, 155, 0.92));
+  width: 0px;
+  background: linear-gradient(180deg, rgba(32, 16, 172, 0.18), rgba(189, 189, 189, 0.02));
   opacity: 0.95;
 }
 
@@ -1206,8 +1215,8 @@ body:has(.app-shell.zakkyo-theme)::after {
 }
 
 .zakkyo-theme .menu-card .icon {
-  color: rgba(214, 179, 109, 0.92);
-  text-shadow: 0 0 14px rgba(214, 179, 109, 0.12);
+  color: rgba(214, 179, 109, 0.82);
+  text-shadow: 0 0 14px rgba(214, 179, 109, 0.32);
 }
 
 .zakkyo-theme .menu-card p,
