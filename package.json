@@ -4,9 +4,14 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "python3 -m http.server 5173",
-    "build": "node scripts/build.mjs",
-    "preview": "python3 -m http.server 4173 --directory dist",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "deploy:direct": "npm run build && npx wrangler pages deploy dist --project-name saikyo-hp"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.2.1"
   }
 }
