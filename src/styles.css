@@ -30,25 +30,19 @@
   --font-ui: "UiLatin", "Yu Gothic", "Hiragino Sans", sans-serif;
   --font-strong: "Avenir Next";
 
-  --color-ink: #f1efe9;
-  --color-ink-strong: #f6f3eb;
-  --color-ink-soft: #bbb5ab;
+  --color-ivory: #f1efe9;
+  --color-pale-ivory: #f6f3eb;
+  --color-warm-gray: #bbb5ab;
+  --color-warm-ivory: #efe9dd;
+  --color-cream: #fff4dc;
+  --color-taupe: #a99788;
+  --color-pale-taupe: #d7c8bb;
   --color-gold: #d7b06e;
-  --color-gold-light: #ffc962;
-  --color-footer: #a99788;
-  --color-nav: #d7c8bb;
-  --color-nav-hover: #fff4dc;
-  --color-nav-line-hover: rgb(255 191 123 / 0.32);
-  --color-nav-surface-hover: rgb(255 180 92 / 0.08);
-  --color-chip-text: #efe9dd;
-  --color-card-line: rgb(214 179 109 / 0.18);
-  --color-card-line-hover: rgb(214 179 109 / 0.28);
-  --color-chip-line: rgb(255 201 98 / 0.1);
-  --color-chip-surface: rgb(214 179 109 / 0.08);
-  --color-glow-line: rgb(255 201 98 / 0.72);
-  --color-question-line: rgb(255 248 236 / 0.16);
-  --color-question-surface: rgb(255 255 255 / 0.01);
-  --color-answer-surface: rgb(255 255 255 / 0.04);
+  --color-muted-gold: #d6b36d;
+  --color-amber: #ffc962;
+  --color-apricot: #ffbf7b;
+  --color-orange: #ffb45c;
+  --color-warm-white: #fff8ec;
 
   --shadow-header: 0 0.875rem 2.25rem rgb(0 0 0 / 0.24);
   --shadow-panel: 0 0.75rem 0.75rem rgb(0 0 0 / 0.2);
@@ -142,18 +136,23 @@
 }
 
 @utility surface-chip {
-  border-color: var(--color-chip-line);
-  background-color: var(--color-chip-surface);
-  color: var(--color-chip-text);
+  border-color: color-mix(in srgb, var(--color-amber) 10%, transparent);
+  background-color: color-mix(in srgb, var(--color-muted-gold) 8%, transparent);
+  color: var(--color-warm-ivory);
 }
 
 @utility menu-index-colors {
-  color: rgb(214 179 109 / 0.82);
-  text-shadow: 0 0 0.875rem rgb(214 179 109 / 0.32);
+  color: color-mix(in srgb, var(--color-muted-gold) 82%, transparent);
+  text-shadow: 0 0 0.875rem color-mix(in srgb, var(--color-muted-gold) 32%, transparent);
 }
 
 @utility decoration-menu-rule {
-  background: linear-gradient(90deg, rgb(214 179 109 / 0.78), var(--color-card-line), transparent);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--color-muted-gold) 78%, transparent),
+    color-mix(in srgb, var(--color-muted-gold) 18%, transparent),
+    transparent
+  );
 }
 
 @utility decoration-section-rule {
@@ -173,7 +172,11 @@
 @utility surface-avatar {
   background:
     linear-gradient(135deg, rgb(90 90 96 / 0.92), rgb(38 38 42 / 0.84)),
-    linear-gradient(180deg, rgb(214 179 109 / 0.16), var(--color-chip-surface));
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-muted-gold) 16%, transparent),
+      color-mix(in srgb, var(--color-muted-gold) 8%, transparent)
+    );
 }
 
 @utility decoration-member-rule {
@@ -181,13 +184,13 @@
 }
 
 @utility surface-action-primary {
-  border-color: rgb(214 179 109 / 0.48);
+  border-color: color-mix(in srgb, var(--color-muted-gold) 48%, transparent);
   background: linear-gradient(135deg, #fcc157, #b38134);
   color: #1a1714;
 }
 
 @utility surface-action-secondary {
-  border-color: rgb(214 179 109 / 0.34);
+  border-color: color-mix(in srgb, var(--color-muted-gold) 34%, transparent);
   background: linear-gradient(135deg, rgb(38 38 41 / 0.96), rgb(24 24 27 / 0.96));
-  color: var(--color-ink);
+  color: var(--color-ivory);
 }
